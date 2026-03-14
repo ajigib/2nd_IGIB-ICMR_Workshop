@@ -828,3 +828,73 @@ Explanation:
 - Counting them gives the **number of reads**.
 
 ---
+
+### Package Manager (Conda)
+
+A **package manager** is a software tool that helps manage the installation and maintenance of software on a system.
+
+A package manager can:
+
+- Install software
+- Update software
+- Remove software
+- Automatically manage dependencies
+
+Package managers simplify software management and help maintain stable computing environments.
+
+#### Dependency
+
+A **dependency** is another software package or library that a program requires in order to function correctly.
+
+For example, a bioinformatics tool written in Python may depend on:
+
+- specific Python versions  
+- additional libraries  
+- other command-line tools  
+
+Package managers automatically install these required dependencies.
+
+#### Why Package Managers Are Needed
+
+Without a package manager:
+
+- Software must be installed **manually**
+- **Version conflicts** between tools are common
+- Dependencies may be missing
+- Software can **break easily**
+- Reproducing the same computational environment becomes difficult
+
+Package managers solve these problems by **automatically managing software versions and dependencies**.
+
+
+#### What is Conda?
+
+**Conda** is an **open-source package manager and environment manager** widely used in scientific computing and bioinformatics.
+
+Conda can:
+
+- Install packages written in **multiple programming languages** (Python, R, C, C++)
+- Automatically install required **dependencies**
+- Create **isolated software environments**
+- Manage **different versions of the same software**
+- Work across **Linux, macOS, and Windows**
+
+Because of these capabilities, Conda is commonly used to manage **bioinformatics software pipelines**.
+
+#### What is a Conda Environment?
+
+A **Conda environment** is an **isolated software workspace** that contains:
+
+- A specific **Python version**
+- Required **packages**
+- All necessary **dependencies**
+
+Each environment is independent, which means:
+
+- Different projects can use **different software versions**
+- Software conflicts are avoided
+- Analyses can be **reproduced reliably**
+
+For example, one environment may contain tools for **genome assembly**, while another contains tools for **RNA-seq analysis**.
+
+---
