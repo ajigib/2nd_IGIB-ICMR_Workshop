@@ -84,6 +84,3 @@ grep -i "error" log_file.txt
 # Create another example log file
 nano log_file2.txt
 ```
-
-```bash
-# View the file
