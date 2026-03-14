@@ -39,7 +39,6 @@ grep "^>" sequence.fasta
 grep "5$" sequence.fasta
 ```
 
----
 
 #### Installing a Text Editor
 
@@ -47,7 +46,6 @@ grep "5$" sequence.fasta
 sudo apt-get install -y nano
 ```
 
----
 
 #### Creating and Viewing a Log File
 
@@ -61,7 +59,6 @@ nano log_file.txt
 cat log_file.txt
 ```
 
----
 
 #### Searching Patterns in Logs
 
@@ -80,7 +77,6 @@ grep "error" log_file.txt
 grep -i "error" log_file.txt
 ```
 
----
 
 #### Working with a Second Log File
 
