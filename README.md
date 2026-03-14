@@ -3,3 +3,4 @@
 2. Introduction to Shell & BASH Scripting
 3. Package Manager (Conda)
 4. Bioinformatics Tools (seqkit, seqtk) 
+---
