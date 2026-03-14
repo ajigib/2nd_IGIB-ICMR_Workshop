@@ -225,6 +225,7 @@ Line 4: quality scores
 ```
 
 This command extracts **only the DNA sequence lines**.
+
 ---
 ### sed — Stream Editor
 
