@@ -899,47 +899,7 @@ For example, one environment may contain tools for **genome assembly**, while an
 
 
 
-```
-🌳 CONDA ENVIRONMENT TREE
-==========================
 
-📁 CONDA (Root)
-│
-├── 📂 base (default)
-│   ├── 🐍 Python 3.9
-│   ├── 📦 pandas==1.3.5
-│   ├── 📦 numpy==1.21.4
-│   ├── 📦 scipy==1.7.3
-│   └── 📦 ... (many more)
-│
-├── 📂 data_science_env
-│   ├── 🐍 Python 3.8
-│   ├── 📦 jupyter==1.0.0
-│   ├── 📦 matplotlib==3.4.3
-│   ├── 📦 seaborn==0.11.2
-│   └── 📦 scikit-learn==1.0.1
-│
-├── 📂 deep_learning_env
-│   ├── 🐍 Python 3.9
-│   ├── 📦 tensorflow==2.7.0
-│   ├── 📦 torch==1.10.0
-│   ├── 📦 keras==2.7.0
-│   └── 📦 transformers==4.12.0
-│
-└── 📂 web_dev_env
-    ├── 🐍 Python 3.10
-    ├── 📦 django==4.0
-    ├── 📦 flask==2.0
-    ├── 📦 requests==2.26
-    └── 📦 beautifulsoup4==4.10
-
-📋 COMMANDS:
-   🔨 Create: conda create -n env_name python=3.9 package1 package2
-   ⚡ Activate: conda activate env_name
-   ⏹️ Deactivate: conda deactivate
-   📜 List: conda env list
-   🗑️ Remove: conda env remove -n env_name
-```
 
 
 
