@@ -944,13 +944,110 @@ graph TD
         BASE --> WEB
     end
 ```
+---
+### 🔧 Conda Installation & Bioinformatics Setup
 
+#### 📥 Installation Steps
 
+```bash
+# Download Miniconda installer
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
+# Make installer executable
+chmod +x Miniconda3-latest-Linux-x86_64.sh
 
+# Run installation
+./Miniconda3-latest-Linux-x86_64.sh
 
+# Activate conda in current session
+source ~/.bashrc
+```
 
+#### 🌿 Environment Management
 
+```bash
+# Create new environment named 'bio'
+conda create -n bio
 
+# Activate the environment
+conda activate bio
 
+# Install bioinformatics tools from bioconda channel
+conda install -c bioconda seqkit
+conda install bioconda::seqtk
+```
+
+#### 🧬 Bioinformatics Tools & Commands
+
+#### ✅ Installation Verification
+
+```bash
+# Check versions
+seqkit version
+seqtk
+```
+
+---
+
+#### 📊 SeqKit Commands - Sequence Analysis Toolkit
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| **Basic Statistics** | Count sequences in FASTA file | `seqkit stats sequence.fasta` |
+| **Detailed Stats** | Show length, GC content, etc. | `seqkit stats sequence.fasta -a` |
+| **Sequence Lengths** | Get sequence lengths with names | `seqkit fx2tab -l -n sequence.fasta` |
+| **Filter by ID** | Extract specific sequence | `seqkit grep -p "CP075494.1" sequence.fasta` |
+| **Format Conversion** | Convert to single-line FASTA | `seqkit seq -w 0 sequence.fasta > single_line.fa` |
+| **Split Files** | Split into multiple parts | `seqkit split -p 2 sequence.fasta` |
+
+#### 📋 SeqKit Command Explanations
+
+```
+🔍 seqkit stats sequence.fasta
+    └── Shows basic sequence counts (number of sequences, total bases)
+
+📊 seqkit stats sequence.fasta -a
+    └── Detailed statistics including:
+        ├── Min/Max/Avg length
+        ├── GC content
+        └── Total sequences
+
+📏 seqkit fx2tab -l -n sequence.fasta
+    └── Creates table with:
+        ├── Sequence names (-n)
+        └── Lengths (-l)
+
+🎯 seqkit grep -p "CP075494.1" sequence.fasta
+    └── Extracts sequences matching pattern:
+        └── "CP075494.1" (accession number)
+
+✂️ seqkit seq -w 0 sequence.fasta > single_line.fa
+    └── Converts multi-line FASTA to single-line format
+
+🔪 seqkit split -p 2 sequence.fasta
+    └── Splits file into 2 equal parts
+```
+
+---
+
+### 🔧 Seqtk Commands - Sequence Toolkit
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| **FASTQ to FASTA** | Convert format | `seqtk seq -A reads.fastq > reads.fa` |
+| **Reverse Complement** | Get reverse complement | `seqtk seq -r reads.fa > rc.fa` |
+
+### 📋 Seqtk Command Explanations
+
+```
+🔄 seqtk seq -A reads.fastq > reads.fa
+    ├── -A : Output FASTA format
+    ├── Input: reads.fastq
+    └── Output: reads.fa (converted to FASTA)
+
+🪞 seqtk seq -r reads.fa > rc.fa
+    ├── -r : Reverse complement
+    ├── Input: reads.fa  
+    └── Output: rc.fa (reverse complemented sequences)
+```
 ---
