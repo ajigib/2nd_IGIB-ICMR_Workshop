@@ -559,3 +559,319 @@ Explanation:
 - This explicitly creates a **TSV (Tab-Separated Values) format**.
 
 ---
+
+## sort
+
+`sort` is a command-line utility used to **arrange lines of text files in a specified order**.  
+It can sort data:
+
+- Alphabetically
+- Numerically
+- By specific columns
+- By multiple keys
+
+It is widely used in **data preprocessing, log analysis, and bioinformatics pipelines**.
+
+---
+
+### View File Contents
+
+```bash
+cat merge_file1.txt
+```
+
+Displays the contents of the file.
+
+---
+
+### Sort a File Alphabetically
+
+```bash
+sort merge_file1.txt
+```
+
+Explanation:
+- Sorts the lines **alphabetically** by default.
+
+---
+
+### View Another File
+
+```bash
+cat merge_file2.txt
+```
+
+---
+
+### Sort the File
+
+```bash
+sort merge_file2.txt
+```
+
+Sorts lines alphabetically.
+
+---
+
+### Sort Numerically
+
+```bash
+sort -n merge_file2.txt
+```
+
+Explanation:
+- `-n` → performs **numeric sorting** instead of alphabetical sorting.
+
+Example:
+```
+1
+2
+10
+20
+```
+
+---
+
+### View Expression Data
+
+```bash
+cat expression.tsv
+```
+
+Displays a **tab-separated expression dataset**.
+
+---
+
+### Sort by a Specific Column
+
+```bash
+sort -k2,2n expression.tsv
+```
+
+Explanation:
+- `-k2,2` → sort by **column 2**
+- `n` → numeric sorting
+
+This sorts the file based on **numeric values in the second column**.
+
+---
+
+### View BED File
+
+```bash
+cat regions.bed
+```
+
+Displays genomic interval data.
+
+---
+
+### Bioinformatics Example: Sort BED File
+
+```bash
+sort -k1,1 -k2,2n regions.bed
+```
+
+Explanation:
+- `-k1,1` → sort by **chromosome column**
+- `-k2,2n` → then sort by **start position numerically**
+
+This ensures genomic regions are **ordered correctly by chromosome and coordinate**.
+
+---
+
+# uniq
+
+`uniq` is used to **filter or report repeated lines in a sorted file**.  
+It is commonly used together with `sort`.
+
+---
+
+### Extract Unique Values
+
+```bash
+cut -f1 regions.bed | sort | uniq
+```
+
+Explanation:
+- `cut -f1` → extracts the first column
+- `sort` → sorts values
+- `uniq` → removes duplicate lines.
+
+---
+
+### Count Unique Occurrences
+
+```bash
+cut -f1 regions.bed | sort | uniq -c
+```
+
+Explanation:
+- `-c` → counts how many times each value appears.
+
+Example output:
+
+```
+5 chr1
+3 chr2
+2 chr3
+```
+
+---
+
+### Find Duplicate Lines
+
+```bash
+cut -f1 regions.bed | sort | uniq -d
+```
+
+Explanation:
+- `-d` → prints **only duplicated lines**.
+
+---
+
+### Find Lines Appearing Once
+
+```bash
+cut -f1 regions.bed | sort | uniq -u
+```
+
+Explanation:
+- `-u` → prints lines that appear **exactly once**.
+
+---
+
+# comm
+
+`comm` compares **two sorted files line by line**.
+
+It outputs three columns:
+
+1. Lines unique to file1  
+2. Lines unique to file2  
+3. Lines common to both files  
+
+---
+
+### Compare Two Files
+
+```bash
+comm comm_file1.txt comm_file2.txt
+```
+
+Explanation:
+- Displays differences and similarities between the two files.
+
+---
+
+### Show Only Common Lines
+
+```bash
+comm -12 comm_file1.txt comm_file2.txt
+```
+
+Explanation:
+- `-1` → suppress column 1 (file1 unique lines)
+- `-2` → suppress column 2 (file2 unique lines)
+
+Result: only **shared lines** are displayed.
+
+---
+
+# wc
+
+`wc` (word count) is used to **count lines, words, and characters in a file**.
+
+---
+
+### Count Lines
+
+```bash
+wc -l sequences.fasta
+```
+
+Explanation:
+- `-l` → counts the **number of lines**.
+
+---
+
+### Count Words
+
+```bash
+wc -w manuscript.txt
+```
+
+Explanation:
+- `-w` → counts the **number of words**.
+
+---
+
+### Count Lines, Words, and Characters
+
+```bash
+wc large_file.fastq
+```
+
+Displays:
+- number of lines
+- number of words
+- number of characters.
+
+---
+
+### Bioinformatics Example: Count FASTQ Reads
+
+```bash
+wc -l reads.fastq | awk '{print $1/4}'
+```
+
+Explanation:
+- FASTQ format has **4 lines per read**
+- `wc -l` counts total lines
+- `awk '{print $1/4}'` divides by 4 to get the **total number of reads**.
+
+---
+
+### Print FASTA Headers
+
+```bash
+grep ">" sequence.fasta
+```
+
+Explanation:
+- FASTA headers start with `>`
+- This prints all sequence identifiers.
+
+---
+
+### Count FASTA Sequences
+
+```bash
+grep ">" sequence.fasta | wc -l
+```
+
+Explanation:
+- Counts the number of headers
+- Each header corresponds to **one sequence**.
+
+---
+
+### View FASTQ File
+
+```bash
+cat reads.fastq
+```
+
+Displays the FASTQ file contents.
+
+---
+
+### Count FASTQ Reads Using Headers
+
+```bash
+grep "@" reads.fastq | wc -l
+```
+
+Explanation:
+- FASTQ read headers begin with `@`
+- Counting them gives the **number of reads**.
