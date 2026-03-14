@@ -943,7 +943,47 @@ For example, one environment may contain tools for **genome assembly**, while an
 
 
 
-
+```mermaid
+graph TD
+    subgraph CONDA[Conda Environments]
+        direction TB
+        
+        subgraph BASE[Base Environment]
+            B1[🐍 Python 3.9]
+            B2[📦 pandas 1.3.5]
+            B3[📦 numpy 1.21.4]
+            B4[📦 scipy 1.7.3]
+        end
+        
+        subgraph DS[Data Science Env]
+            D1[🐍 Python 3.8]
+            D2[📦 jupyter 1.0.0]
+            D3[📦 matplotlib 3.4.3]
+            D4[📦 seaborn 0.11.2]
+            D5[📦 scikit-learn 1.0.1]
+        end
+        
+        subgraph DL[Deep Learning Env]
+            L1[🐍 Python 3.9]
+            L2[📦 tensorflow 2.7.0]
+            L3[📦 torch 1.10.0]
+            L4[📦 keras 2.7.0]
+            L5[📦 transformers 4.12.0]
+        end
+        
+        subgraph WEB[Web Dev Env]
+            W1[🐍 Python 3.10]
+            W2[📦 django 4.0]
+            W3[📦 flask 2.0]
+            W4[📦 requests 2.26]
+            W5[📦 beautifulsoup4 4.10]
+        end
+        
+        BASE --> DS
+        BASE --> DL
+        BASE --> WEB
+    end
+```
 
 
 
