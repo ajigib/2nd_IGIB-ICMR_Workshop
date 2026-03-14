@@ -502,3 +502,60 @@ Explanation:
 
 This is useful when processing **CSV datasets where commas separate fields**.
 
+---
+
+### paste
+
+`paste` is a command-line utility used to **merge lines from multiple files side-by-side**.  
+It combines corresponding lines from each file into a single line, separated by a delimiter.
+
+Common uses:
+- Combining related datasets
+- Creating tabular files from separate lists
+- Merging columns from different files
+
+#### View File Contents
+
+```bash
+cat merge_file1.txt
+```
+
+Displays the contents of the first file.
+
+```bash
+cat merge_file2.txt
+```
+
+Displays the contents of the second file.
+
+#### Merge Two Files Column-wise
+
+```bash
+paste merge_file1.txt merge_file2.txt
+```
+
+Explanation:
+- `paste` reads the two files simultaneously.
+- It merges corresponding lines from both files.
+- By default, the columns are separated by a **tab character**.
+
+Example output:
+
+```
+line1_file1    line1_file2
+line2_file1    line2_file2
+line3_file1    line3_file2
+```
+
+#### Create a TSV File from Two Lists
+
+```bash
+paste -d'\t' merge_file1.txt merge_file2.txt
+```
+
+Explanation:
+- `-d` specifies a **custom delimiter**
+- `'\t'` sets the delimiter as a **tab**
+- This explicitly creates a **TSV (Tab-Separated Values) format**.
+
+---
