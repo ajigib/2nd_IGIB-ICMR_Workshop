@@ -225,3 +225,206 @@ Line 4: quality scores
 ```
 
 This command extracts **only the DNA sequence lines**.
+---
+### sed — Stream Editor
+
+`sed` (Stream Editor) is a command-line utility used to **perform text transformations on streams of text or files**.  
+It is commonly used for:
+
+- Find and replace operations
+- Deleting lines
+- Extracting sections of files
+- Formatting text
+- Simple automated editing of files
+
+It processes input **line by line** and applies editing commands.
+
+#### Remove Prefix at Beginning of Line
+
+Remove `"chr"` only if it appears at the **start of a line**.
+
+```bash
+sed 's/^chr//' regions.bed
+```
+
+Explanation:
+- `s` → substitute command  
+- `^chr` → matches `"chr"` only at the **beginning of a line**  
+- Replaces it with nothing (effectively deleting it).
+
+
+#### View File Contents
+
+```bash
+cat annotations.gtf
+```
+
+Displays the contents of the **GTF annotation file**.
+
+
+#### Find and Replace Text
+
+Replace `"chr"` with `"scaffold_"` in the file output.
+
+```bash
+sed 's/chr/scaffold_/g' annotations.gtf
+```
+
+Explanation:
+- `s` → substitute
+- `chr` → search pattern
+- `scaffold_` → replacement
+- `g` → replace **all matches in each line**.
+
+#### Replace Text In-Place
+
+Modify the file directly instead of printing to the terminal.
+
+```bash
+sed -i 's/chr/scaffold_/g' annotations.gtf
+```
+
+Explanation:
+- `-i` → edit the file **in place**.
+
+#### Revert Replacement
+
+Replace `"scaffold_"` back to `"chr"`.
+
+```bash
+sed -i 's/scaffold_/chr/g' annotations.gtf
+```
+
+#### View Updated File
+
+```bash
+cat annotations.gtf
+```
+
+Displays the modified file.
+
+#### View FASTA File
+
+```bash
+cat sequence2.fasta
+```
+
+Shows the FASTA sequence file.
+
+#### Remove FASTA Headers
+
+Delete lines starting with `>` (FASTA header lines).
+
+```bash
+sed '/^>/d' sequence2.fasta
+```
+
+Explanation:
+- `/^>/` → matches lines beginning with `>`
+- `d` → deletes those lines.
+
+
+#### View VCF File
+
+```bash
+cat variants.vcf
+```
+
+Displays the variant file.
+
+#### Remove Comment Lines from VCF
+
+```bash
+sed '/^#/d' variants.vcf
+```
+
+Explanation:
+- `/^#/` → matches lines beginning with `#`
+- `d` → deletes comment lines.
+
+#### Extract Lines Between Two Markers
+
+Extract a specific FASTA entry.
+
+```bash
+sed -n '/^>gene123/,/^>/p' sequence2.fasta
+```
+
+Explanation:
+- `-n` → suppress automatic printing
+- `/^>gene123/` → start at header `gene123`
+- `/^>/` → stop at next FASTA header
+- `p` → print the selected region.
+
+#### Replace Tabs with Spaces
+
+```bash
+sed 's/\t/ /g' file.gff
+```
+
+Explanation:
+- `\t` → tab character
+- Replaces each tab with a space.
+
+#### Collapse Multiple Spaces
+
+```bash
+sed 's/  */ /g' multispace_file.txt
+```
+
+Explanation:
+- `  *` → matches two or more spaces
+- Replaces them with a **single space**.
+
+
+#### Convert FASTA Sequences to Lowercase
+
+```bash
+sed '/^>/! s/.*/\L&/' sequence2.fasta
+```
+
+Explanation:
+- `/^>/!` → apply command to **non-header lines only**
+- `\L` → convert text to lowercase
+- `&` → entire matched line.
+
+
+#### Convert FASTA Sequences to Uppercase
+
+```bash
+sed '/^>/! s/.*/\U&/' sequence2.fasta
+```
+
+Explanation:
+- `\U` → converts text to uppercase
+- Headers remain unchanged.
+
+#### Create Backup While Editing
+
+```bash
+sed -i.bak 's/sample3/sample4/g' expression.tsv
+```
+
+Explanation:
+- `-i.bak` → edit file and **create a backup** with `.bak` extension.
+
+
+#### View Backup File
+
+```bash
+cat expression.tsv.bak
+```
+
+Displays the backup copy.
+
+#### Delete the First N Lines
+
+Delete the first **4 lines** of the file.
+
+```bash
+sed '1,4d' expression.tsv
+```
+
+Explanation:
+- `1,4` → line range
+- `d` → delete those lines.
