@@ -899,6 +899,7 @@ For example, one environment may contain tools for **genome assembly**, while an
 
 
 
+```
 🌳 CONDA ENVIRONMENT TREE
 ==========================
 
@@ -933,11 +934,12 @@ For example, one environment may contain tools for **genome assembly**, while an
     └── 📦 beautifulsoup4==4.10
 
 📋 COMMANDS:
-   🔨 Create:  conda create -n env_name python=3.9 package1 package2
+   🔨 Create: conda create -n env_name python=3.9 package1 package2
    ⚡ Activate: conda activate env_name
    ⏹️ Deactivate: conda deactivate
    📜 List: conda env list
    🗑️ Remove: conda env remove -n env_name
+```
 
 
 
