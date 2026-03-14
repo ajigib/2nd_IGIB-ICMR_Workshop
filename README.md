@@ -84,3 +84,144 @@ grep -i "error" log_file.txt
 # Create another example log file
 nano log_file2.txt
 ```
+---
+
+### awk
+
+`awk` is a powerful programming language and command-line utility used for **pattern scanning and text processing**.  
+It processes input data **line by line (records)** and splits each line into **columns (fields)**, usually separated by spaces or tabs.  
+
+It is widely used for:
+- Column-based data manipulation
+- Filtering rows based on conditions
+- Extracting fields from structured files
+- Bioinformatics data processing (FASTA, GTF, BED, FASTQ)
+
+
+#### Viewing File Contents
+
+Display the contents of a file.
+
+```bash
+cat expression.tsv
+```
+
+#### Extract Specific Columns
+
+Print the **1st and 3rd columns** from a tabular file.
+
+```bash
+awk '{print $1, $3}' expression.tsv
+```
+
+Explanation:
+- `$1` → first column  
+- `$3` → third column  
+- `print` → outputs selected fields  
+- Default separator is a space.
+
+
+#### Print Columns with Tab Separation
+
+Print the **1st and 3rd columns separated by a tab**.
+
+```bash
+awk '{print $1 "\t" $3}' expression.tsv
+```
+
+Explanation:
+- `"\t"` inserts a **tab character** between fields.
+
+
+#### Filter Rows Based on a Condition
+
+Print rows where the **value in column 5 is greater than 1**.
+
+```bash
+awk '$5 > 1' expression.tsv
+```
+
+Explanation:
+- `$5` → fifth column
+- `> 1` → condition applied to filter rows
+- Only rows satisfying the condition are printed.
+
+
+#### Display a GTF Annotation File
+
+```bash
+cat annotations.gtf
+```
+
+This prints the entire **GTF annotation file**, commonly used for gene annotations.
+
+
+#### Extract Gene Coordinates
+
+Print chromosome, start, end, and strand for **gene entries**.
+
+```bash
+awk '$3=="gene" {print $1, $4, $5, $7}' annotations.gtf
+```
+
+Explanation:
+- `$3=="gene"` → selects rows describing genes
+- `$1` → chromosome
+- `$4` → start coordinate
+- `$5` → end coordinate
+- `$7` → strand (+ or -)
+
+
+#### Filter Only Exon Features
+
+```bash
+awk '$3=="exon"' annotations.gtf
+```
+
+Explanation:
+- Filters rows where the **third column equals "exon"**.
+
+
+#### Filter Rows by Chromosome
+
+```bash
+awk '$1 == "chr1"' regions.bed
+```
+
+Explanation:
+- `$1` → chromosome column
+- Prints rows that belong to **chromosome 1**.
+
+
+#### Calculate Interval Length
+
+Add a new column representing the **length of genomic intervals**.
+
+```bash
+awk '{print $0 "\t" $3 - $2}' regions.bed
+```
+
+Explanation:
+- `$0` → entire line
+- `$3 - $2` → interval length (end − start)
+- `"\t"` adds the new value as another column.
+
+#### Extract Sequence Lines from FASTQ
+
+```bash
+awk 'NR%4==2' reads.fastq
+```
+
+Explanation:
+- `NR` → current line number
+- `NR % 4 == 2` → selects **every 2nd line in a 4-line FASTQ record**
+- FASTQ format structure:
+
+```
+Line 1: @sequence_id
+Line 2: DNA sequence
+Line 3: +
+Line 4: quality scores
+```
+
+This command extracts **only the DNA sequence lines**.
