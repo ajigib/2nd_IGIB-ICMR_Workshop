@@ -4,7 +4,7 @@
 3. Package Manager (Conda)
 4. Bioinformatics Tools (seqkit, seqtk) 
 ---
-#### Sample file 1
+### Sample file 1
 ```bash
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/021/613/535/GCA_021613535.1_ASM2161353v1/GCA_021613535.1_ASM2161353v1_genomic.fna.gz
 ```
@@ -14,11 +14,11 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/021/613/535/GCA_021613535.1_AS
 gunzip *.gz
 ```
 ---
-## grep
+### grep
 
 `grep` (Global Regular Expression Print) is a command-line utility used to search for text patterns within files or data streams. It implements regular expression (regex) pattern matching, making it a powerful tool in data processing pipelines, log analysis, and bioinformatics workflows.
 
-### Example
+#### Example
 
 ```bash
 grep "pattern" filename.txt
