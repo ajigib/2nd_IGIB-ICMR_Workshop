@@ -431,7 +431,7 @@ Explanation:
 - `d` → delete those lines.
 
 ---
-## cut
+### cut
 
 `cut` is a command-line utility used to **extract specific columns or character ranges from each line of a file**.  
 It is commonly used for processing structured text files such as **TSV, CSV, and tabular bioinformatics data**.
@@ -441,9 +441,8 @@ Typical uses include:
 - Selecting specific character ranges
 - Processing structured text files
 
----
 
-## View File Contents
+#### View File Contents
 
 ```bash
 cat expression.tsv
@@ -451,9 +450,8 @@ cat expression.tsv
 
 Displays the contents of the **TSV (tab-separated values) file**.
 
----
 
-## Extract Specific Columns from a TSV File
+#### Extract Specific Columns from a TSV File
 
 ```bash
 cut -f1,3 expression.tsv
@@ -464,9 +462,8 @@ Explanation:
 - `1,3` → extracts the **first and third columns**  
 - Default delimiter for `cut` is a **tab**, which makes it suitable for TSV files.
 
----
 
-## View FASTA File
+#### View FASTA File
 
 ```bash
 cat sequence2.fasta
@@ -474,9 +471,7 @@ cat sequence2.fasta
 
 Displays the contents of the FASTA sequence file.
 
----
-
-## Extract Specific Character Range
+#### Extract Specific Character Range
 
 ```bash
 cut -c1-10 sequence2.fasta
@@ -486,9 +481,7 @@ Explanation:
 - `-c` → selects **character positions**
 - `1-10` → extracts **characters from position 1 to 10** from each line.
 
----
-
-## View CSV File
+#### View CSV File
 
 ```bash
 cat data.csv
@@ -496,9 +489,8 @@ cat data.csv
 
 Displays the contents of the **comma-separated values file**.
 
----
 
-## Extract Column from a CSV File
+#### Extract Column from a CSV File
 
 ```bash
 cut -d',' -f2 data.csv
