@@ -437,6 +437,8 @@ Displays the modified file.
 cat sequence2.fasta
 ```
 ```
+output
+
 >gene123
 ATGCGTAGTCAGTCTAGCTAGCATCGAT
 >geneA
@@ -468,6 +470,8 @@ Explanation:
 cat variants.vcf
 ```
 ```
+output
+
 ##fileformat=VCFv4.2
 ##source=FreeBayes
 #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
@@ -503,6 +507,19 @@ Explanation:
 - `/^>/` → stop at next FASTA header
 - `p` → print the selected region.
 
+#### View gff File
+
+```bash
+cat file.gff
+```
+```
+output
+
+chr1	ensembl	gene	1000	1500	.	+	.	ID=gene1
+chr1	ensembl	exon	1000	1200	.	+	.	Parent=gene1
+chr2	ensembl	gene	3000	3500	.	-	.	ID=gene2
+```
+
 #### Replace Tabs with Spaces
 
 ```bash
@@ -512,6 +529,21 @@ sed 's/\t/ /g' file.gff
 Explanation:
 - `\t` → tab character
 - Replaces each tab with a space.
+
+#### View Multiple Spaces File
+
+```bash
+cat multispace_file.txt
+```
+```
+output
+
+Chromosome start end
+chr1     20       30
+chr2  35  50
+chr3 68       90
+chr4   36   68
+```
 
 #### Collapse Multiple Spaces
 
