@@ -50,7 +50,10 @@ grep "^>" sequence.fasta
 ```bash
 grep "5$" sequence.fasta
 ```
-
+##### output
+```
+>CP075494.1 Adineta vaga breed AD008 chromosome 5
+```
 
 #### Installing a Text Editor
 
