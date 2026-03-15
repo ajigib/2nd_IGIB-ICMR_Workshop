@@ -8,12 +8,14 @@
 ```bash
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/021/613/535/GCA_021613535.1_ASM2161353v1/GCA_021613535.1_ASM2161353v1_genomic.fna.gz
 ```
-This is the link to download the DNA FASTA file of _Adineta vaga_ 
+This is the link to download the DNA FASTA file of _Adineta vaga_ , We will use this file for practice 
 #### Decompress `.gz` files
 
 ```bash
 gunzip *.gz
 ```
+Unzip the FASTA file 
+
 ---
 ### grep
 
