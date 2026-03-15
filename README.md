@@ -137,33 +137,11 @@ This is original content of log_file.txt
 #### Searching Patterns in Logs
 
 ```bash
-# Match a 6-digit number
 grep -E "[0-9]{6}" log_file.txt
 ```
-The -E flag enables Extended Regular Expressions (ERE).
-
-Why this matters:
-
-Basic grep requires escaping {} for repetition.
-
-With -E, quantifiers like {6} work directly.
-
-This is the regular expression pattern.
-
-[0-9]
-
-A character class
-
-Matches any single digit from 0 to 9
-
-{6}
-
-A quantifier
-
-Means exactly six occurrences
+The -E flag enables Extended Regular Expressions (ERE). Basic grep requires escaping {} for repetition. With -E, quantifiers like {6} work directly. [0-9] is the regular expression pattern. Matches any single digit from 0 to 9. {6} is a A quantifier. Means exactly six occurrences
 
 ```bash
-# Search for the word "error"
 grep "error" log_file.txt
 ```
 
