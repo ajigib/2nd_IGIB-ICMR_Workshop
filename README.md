@@ -1263,7 +1263,6 @@ echo "Done"
 ```
 
 #### Script explanation
-# Simple Pipeline Script Explanation
 
 ```
 #!/bin/bash
@@ -1281,4 +1280,69 @@ Argument Validation
 - Checks if exactly 2 arguments are provided
 - $# = number of arguments
 - If not 2 → shows usage message and exits: Correct usage: bash simple_pipeline.sh input.fasta output
+
+```
+INPUT=$1
+OUT=$2
+```
+Variable Assignment
+- $1 = first argument (input FASTA file)
+- $2 = second argument (output prefix)
+- Stores them in named variables for clarity
+
+```
+# Extract FASTA headers (grep regex)
+grep '^>' "$INPUT" > ${OUT}_headers.txt
+```
+Header Extraction
+- grep finds lines starting with > (FASTA headers)
+- Saves to [output_prefix]_headers.txt
+
+```
+# Convert sequence lines to lowercase (sed regex)
+sed '/^>/! s/.*/\L&/' "$INPUT" > ${OUT}_lowercase.fa
+```
+Lowercase Conversion
+- sed command: for lines NOT starting with > (/^>/!)
+- Convert entire line to lowercase (\L&)
+- Preserves headers (they start with >)
+- Saves to [output_prefix]_lowercase.fa
+
+```
+# Sequence statistics using seqkit
+seqkit stats "$INPUT" > ${OUT}_stats.txt
+```
+Sequence Statistics
+- Uses seqkit stats to analyze the FASTA file
+- Generates: file format, sequence count, total length, GC content, etc.
+- Saves to [output_prefix]_stats.txt
+
+```
+# Reverse complement sequences using seqtk
+seqtk seq -r "$INPUT" > ${OUT}_revcomp.fa
+```
+Reverse Complement
+- seqtk seq -r = reverse complement each sequence
+- A→T, T→A, G→C, C→G, and reverses order
+- Saves to [output_prefix]_revcomp.fa
+
+```
+# Format sequences to 60 bp per line
+seqtk seq -l 60 ${OUT}_revcomp.fa > ${OUT}_revcomp_60.fa
+```
+ Format Sequences
+
+- Takes reverse complement file
+- -l 60 = wraps sequences to 60 characters per line
+- Makes files more readable and compatible with some tools
+- Saves to [output_prefix]_revcomp_60.fa
+
+```
+echo "Done"
+```
+Completion Message
+- Prints "Done" to indicate successful execution
+
+
+
 
