@@ -65,17 +65,12 @@ sudo apt-get install -y nano
 ```
 
 
-#### Creating and Viewing a Log File
+#### Viewing a Log File
 
 ```bash
-# Create an example log file
-nano log_file.txt
-```
-
-```bash
-# Display the contents
 cat log_file.txt
 ```
+This is original content of log_file.txt
 
 
 #### Searching Patterns in Logs
