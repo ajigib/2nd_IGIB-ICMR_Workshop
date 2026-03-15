@@ -231,6 +231,8 @@ cat annotations.gtf
 
 This prints the entire **GTF annotation file**, commonly used for gene annotations.
 ```
+output
+
 chr1	ENSEMBL	gene	1000	5000	.	+	.	gene_id "geneA"; gene_type "protein_coding";
 chr1	ENSEMBL	exon	1000	1200	.	+	.	gene_id "geneA";
 chr1	ENSEMBL	exon	2000	2300	.	+	.	gene_id "geneA";
@@ -274,6 +276,8 @@ Display the contents of regions.bed file.
 cat regions.bed
 ```
 ```
+output
+
 chr1	1000	1500
 chr1	2000	2600
 chr2	3000	3300
@@ -312,6 +316,8 @@ Explanation:
 cat read.fastq
 ```
 ```
+output
+
 @SEQ001
 ATGCGTAGTA
 +
