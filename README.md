@@ -924,6 +924,37 @@ Explanation:
 
 ### comm
 
+#### Viewing a comm File
+
+```bash
+cat comm_file1.txt
+```
+```
+output
+
+ALK
+BRCA1
+BRCA2
+EGFR
+KRAS
+MYC
+TP53
+```
+```bash
+cat comm_file2.txt
+```
+```
+output
+
+BRCA1
+EGFR
+FBXW7
+KRAS
+MYC
+PIK3CA
+TP53
+```
+
 `comm` compares **two sorted files line by line**.
 
 It outputs three columns:
