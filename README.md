@@ -140,7 +140,6 @@ grep "error" log_file.txt
 It reads log_file.txt and prints only the lines that contain the word "error".
 
 ```bash
-# Case-insensitive search
 grep -i "error" log_file.txt
 ```
 is used to search for the word “error” in log_file.txt without considering letter case.
@@ -151,13 +150,6 @@ ERROR
 ErRoR
 any other capitalization
 
-
-#### Working with a Second Log File
-
-```bash
-# Create another example log file
-nano log_file2.txt
-```
 ---
 
 ### awk
@@ -179,7 +171,17 @@ Display the contents of a file.
 ```bash
 cat expression.tsv
 ```
+```
+output
 
+gene_id	sample1	sample2	sample4	logFC
+BRCA1	12	14	11	2.1
+TP53	5	19	17	8.2
+EGFR	33	29	41	1.4
+MYC	2	3	1	0.3
+GAPDH	1000	1021	980	0.1
+
+```
 #### Extract Specific Columns
 
 Print the **1st and 3rd columns** from a tabular file.
