@@ -985,7 +985,7 @@ Explanation:
 Result: only **shared lines** are displayed.
 
 ---
-### Bioinformatics Example: 
+### wc: 
 #### Count FASTQ Reads
 
 ```bash
