@@ -711,13 +711,26 @@ Common uses:
 ```bash
 cat merge_file1.txt
 ```
+```
+BRCA1
+BRCA2
+TP53
+MYC
+EGFR
+```
 
 Displays the contents of the first file.
 
 ```bash
 cat merge_file2.txt
 ```
-
+```
+12.45
+5.67
+89.12
+34.55
+22.80
+```
 Displays the contents of the second file.
 
 #### Merge Two Files Column-wise
