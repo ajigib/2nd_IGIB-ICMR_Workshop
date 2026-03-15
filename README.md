@@ -436,7 +436,17 @@ Displays the modified file.
 ```bash
 cat sequence2.fasta
 ```
+```
+>gene123
+ATGCGTAGTCAGTCTAGCTAGCATCGAT
+>geneA
+ATGCGGATCGATCGTAGCTAGGCTAA
+>geneB
+TTGCGATCGATCGATTTTTAGCGATCGA
+>geneXYZ
+GCGCGCGATATATATAGCGCGCGTATAT
 
+```
 Shows the FASTA sequence file.
 
 #### Remove FASTA Headers
