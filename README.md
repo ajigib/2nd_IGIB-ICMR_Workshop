@@ -664,7 +664,8 @@ Explanation:
 ```bash
 cat data.csv
 ```
-output```
+```
+output
 
 SampleID,Species,Collection_Date,Reads,QC_Passed,Note
 SMP001,Homo_sapiens,2024-01-12,15423000,YES,High depth
