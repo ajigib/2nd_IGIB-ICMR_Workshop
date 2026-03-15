@@ -1220,3 +1220,44 @@ seqtk
 
 
 ---
+
+### BASH Scripting
+A Bash script is a text file containing a series of shell commands that are executed automatically instead of typing them one by one in the terminal.
+Bash scripting is mainly used for:
+- Automation of repetitive tasks
+- Running multiple commands in sequence
+- File and directory management
+```
+#!/bin/bash
+
+# Check arguments
+if [ "$#" -ne 2 ]; then
+    echo "Usage: bash simple_pipeline.sh <input_fasta> <output_prefix>"
+    exit 1
+fi
+
+INPUT=$1
+OUT=$2
+
+# Extract FASTA headers (grep regex)
+grep '^>' "$INPUT" > ${OUT}_headers.txt
+
+
+# Convert sequence lines to lowercase (sed regex)
+sed '/^>/! s/.*/\L&/' "$INPUT" > ${OUT}_lowercase.fa
+
+
+# Sequence statistics using seqkit
+seqkit stats "$INPUT" > ${OUT}_stats.txt
+
+
+# Reverse complement sequences using seqtk
+seqtk seq -r "$INPUT" > ${OUT}_revcomp.fa
+
+
+# Format sequences to 60 bp per line
+seqtk seq -l 60 ${OUT}_revcomp.fa > ${OUT}_revcomp_60.fa
+
+
+echo "Done"
+```
