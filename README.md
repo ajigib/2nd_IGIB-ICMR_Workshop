@@ -712,6 +712,8 @@ Common uses:
 cat merge_file1.txt
 ```
 ```
+output
+
 BRCA1
 BRCA2
 TP53
@@ -725,6 +727,8 @@ Displays the contents of the first file.
 cat merge_file2.txt
 ```
 ```
+output
+
 12.45
 5.67
 89.12
