@@ -58,13 +58,6 @@ output
 >CP075494.1 Adineta vaga breed AD008 chromosome 5
 ```
 
-#### Installing a Text Editor
-
-```bash
-sudo apt-get install -y nano
-```
-
-
 #### Viewing a Log File
 
 ```bash
@@ -144,11 +137,19 @@ The -E flag enables Extended Regular Expressions (ERE). Basic grep requires esca
 ```bash
 grep "error" log_file.txt
 ```
+It reads log_file.txt and prints only the lines that contain the word "error".
 
 ```bash
 # Case-insensitive search
 grep -i "error" log_file.txt
 ```
+is used to search for the word “error” in log_file.txt without considering letter case.
+It prints every line in log_file.txt that contains:
+error
+Error
+ERROR
+ErRoR
+any other capitalization
 
 
 #### Working with a Second Log File
