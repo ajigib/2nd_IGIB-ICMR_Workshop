@@ -1261,3 +1261,24 @@ seqtk seq -l 60 ${OUT}_revcomp.fa > ${OUT}_revcomp_60.fa
 
 echo "Done"
 ```
+
+#### Script explanation
+# Simple Pipeline Script Explanation
+
+```
+#!/bin/bash
+```
+Shebang - Tells the system to use bash interpreter to run this script
+
+```
+# Check arguments
+if [ "$#" -ne 2 ]; then
+    echo "Usage: bash simple_pipeline.sh <input_fasta> <output_prefix>"
+    exit 1
+fi
+```
+Argument Validation
+- Checks if exactly 2 arguments are provided
+- $# = number of arguments
+- If not 2 → shows usage message and exits: Correct usage: bash simple_pipeline.sh input.fasta output
+
