@@ -4,7 +4,7 @@
 3. Package Manager (Conda)
 4. Bioinformatics Tools (seqkit, seqtk) 
 ---
-### Sample file 1
+### Sample file
 ```bash
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/021/613/535/GCA_021613535.1_ASM2161353v1/GCA_021613535.1_ASM2161353v1_genomic.fna.gz
 ```
@@ -36,6 +36,7 @@ mv GCA_021613535.1_ASM2161353v1_genomic.fna sequence.fasta
 ```bash
 grep "^>" sequence.fasta
 ```
+##### output
 ```
 >CP075493.1 Adineta vaga breed AD008 chromosome 1
 >CP075495.1 Adineta vaga breed AD008 chromosome 2
