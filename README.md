@@ -467,6 +467,15 @@ Explanation:
 ```bash
 cat variants.vcf
 ```
+```
+##fileformat=VCFv4.2
+##source=FreeBayes
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chr1	10500	.	A	G	40	PASS	DP=12
+chr1	10520	rs123	C	T	99	PASS	DP=20
+chr2	9999	.	G	A	5	LowQual	DP=3
+
+```
 
 Displays the variant file.
 
