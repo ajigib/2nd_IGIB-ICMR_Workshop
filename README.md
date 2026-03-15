@@ -1208,33 +1208,6 @@ seqtk
 | **Format Conversion** | Convert to single-line FASTA | `seqkit seq -w 0 sequence.fasta > single_line.fa` |
 | **Split Files** | Split into multiple parts | `seqkit split -p 2 sequence.fasta` |
 
-#### 📋 SeqKit Command Explanations
-
-```
-🔍 seqkit stats sequence.fasta
-    └── Shows basic sequence counts (number of sequences, total bases)
-
-📊 seqkit stats sequence.fasta -a
-    └── Detailed statistics including:
-        ├── Min/Max/Avg length
-        ├── GC content
-        └── Total sequences
-
-📏 seqkit fx2tab -l -n sequence.fasta
-    └── Creates table with:
-        ├── Sequence names (-n)
-        └── Lengths (-l)
-
-🎯 seqkit grep -p "CP075494.1" sequence.fasta
-    └── Extracts sequences matching pattern:
-        └── "CP075494.1" (accession number)
-
-✂️ seqkit seq -w 0 sequence.fasta > single_line.fa
-    └── Converts multi-line FASTA to single-line format
-
-🔪 seqkit split -p 2 sequence.fasta
-    └── Splits file into 2 equal parts
-```
 
 ---
 
@@ -1245,17 +1218,5 @@ seqtk
 | **FASTQ to FASTA** | Convert format | `seqtk seq -A reads.fastq > reads.fa` |
 | **Reverse Complement** | Get reverse complement | `seqtk seq -r reads.fa > rc.fa` |
 
-### 📋 Seqtk Command Explanations
 
-```
-🔄 seqtk seq -A reads.fastq > reads.fa
-    ├── -A : Output FASTA format
-    ├── Input: reads.fastq
-    └── Output: reads.fa (converted to FASTA)
-
-🪞 seqtk seq -r reads.fa > rc.fa
-    ├── -r : Reverse complement
-    ├── Input: reads.fa  
-    └── Output: rc.fa (reverse complemented sequences)
-```
 ---
