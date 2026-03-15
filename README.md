@@ -36,6 +36,14 @@ mv GCA_021613535.1_ASM2161353v1_genomic.fna sequence.fasta
 ```bash
 grep "^>" sequence.fasta
 ```
+```
+>CP075493.1 Adineta vaga breed AD008 chromosome 1
+>CP075495.1 Adineta vaga breed AD008 chromosome 2
+>CP075492.1 Adineta vaga breed AD008 chromosome 3
+>CP075496.1 Adineta vaga breed AD008 chromosome 4
+>CP075494.1 Adineta vaga breed AD008 chromosome 5
+>CP075497.1 Adineta vaga breed AD008 chromosome 6
+```
 
 #### Match Lines Ending with a Pattern
 ```bash
