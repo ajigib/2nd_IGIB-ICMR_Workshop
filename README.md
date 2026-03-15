@@ -71,6 +71,8 @@ sudo apt-get install -y nano
 cat log_file.txt
 ```
 ```
+output
+
 [2025-02-01 08:12:01] Starting workflow: RNA-seq processing v2.4.1
 
 --- FastQC Summary ---
