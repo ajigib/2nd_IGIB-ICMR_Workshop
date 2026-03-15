@@ -266,6 +266,21 @@ awk '$3=="exon"' annotations.gtf
 Explanation:
 - Filters rows where the **third column equals "exon"**.
 
+#### Viewing regions.bed File Contents
+
+Display the contents of regions.bed file.
+
+```bash
+cat regions.bed
+```
+```
+chr1	1000	1500
+chr1	2000	2600
+chr2	3000	3300
+chr2	100	500
+chr3	5000	8000
+
+```
 
 #### Filter Rows by Chromosome
 
