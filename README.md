@@ -37,7 +37,7 @@ mv GCA_021613535.1_ASM2161353v1_genomic.fna sequence.fasta
 grep "^>" sequence.fasta
 ```
 ```
-**output**
+output
 
 >CP075493.1 Adineta vaga breed AD008 chromosome 1
 >CP075495.1 Adineta vaga breed AD008 chromosome 2
@@ -53,7 +53,7 @@ grep "5$" sequence.fasta
 ```
 
 ```
-**output**
+output
 
 >CP075494.1 Adineta vaga breed AD008 chromosome 5
 ```
