@@ -984,38 +984,6 @@ Explanation:
 
 Result: only **shared lines** are displayed.
 
-### wc
-
-`wc` (word count) is used to **count lines, words, and characters in a file**.
-
-#### Count Lines
-
-```bash
-wc -l sequences.fasta
-```
-
-Explanation:
-- `-l` → counts the **number of lines**.
-
-#### Count Words
-
-```bash
-wc -w manuscript.txt
-```
-
-Explanation:
-- `-w` → counts the **number of words**.
-
-#### Count Lines, Words, and Characters
-
-```bash
-wc large_file.fastq
-```
-
-Displays:
-- number of lines
-- number of words
-- number of characters.
 ---
 ### Bioinformatics Example: 
 #### Count FASTQ Reads
