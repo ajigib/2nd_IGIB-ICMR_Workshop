@@ -306,6 +306,27 @@ Explanation:
 - `$3 - $2` → interval length (end − start)
 - `"\t"` adds the new value as another column.
 
+#### Display read.fastq File
+
+```bash
+cat read.fastq
+```
+```
+@SEQ001
+ATGCGTAGTA
++
+IIIIIIIIII
+@SEQ002
+TTATCGATCG
++
+JJJJJJJJJJ
+@SEQ003
+GCGATCGTAA
++
+HHHHHHHHHH
+
+```
+
 #### Extract Sequence Lines from FASTQ
 
 ```bash
